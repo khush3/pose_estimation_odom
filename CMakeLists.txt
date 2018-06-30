@@ -228,3 +228,11 @@ target_link_libraries(
   ${catkin_LIBRARIES} ${wiringpi_LIBRARY}
 )
 add_dependencies(teleop_motor_control_node mobile_robot_generate_messages_cpp)
+
+
+add_executable(pose_estimator_node src/pose_estimator.cpp)
+target_link_libraries(
+  pose_estimator_node
+  ${catkin_LIBRARIES} 
+)
+add_dependencies(pose_estimator_node mobile_robot_generate_messages_cpp)

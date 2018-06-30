@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="mob_robot" name="encoder" type="encoder" output="screen" />
+  <node pkg="mob_robot" name="teleop_motor_control_node" type="teleop_motor_control_node" output="screen" />
+  <node pkg="mob_robot" name="pose_estimator_node" type="pose_estimator_node" output="screen" />
+</launch>

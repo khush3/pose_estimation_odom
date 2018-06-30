@@ -1,0 +1,2 @@
+int64 cntr_sensor_1
+int64 cntr_sensor_2

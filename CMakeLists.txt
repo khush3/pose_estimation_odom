@@ -222,3 +222,9 @@ target_link_libraries(
 )
 
 #target_link_libraries(encoder ${catkin_LIBRARIES})
+add_executable(teleop_motor_control_node src/teleop_motor_control.cpp)
+target_link_libraries(
+  teleop_motor_control_node
+  ${catkin_LIBRARIES} ${wiringpi_LIBRARY}
+)
+add_dependencies(teleop_motor_control_node mobile_robot_generate_messages_cpp)

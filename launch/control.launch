@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="mob_robot" name="encoder" type="encoder" output="screen" />
+  <node pkg="mob_robot" name="motor_control_node" type="motor_control_node" output="screen" />
+</launch>

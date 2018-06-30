@@ -28,7 +28,7 @@
 
 void move_frwd(void)
 {
-      ROS_INFO("HEADING ST");                  //uncomment for debugging
+      //ROS_INFO("HEADING ST");                  //uncomment for debugging
 	  softPwmWrite(L_MTR_PIN_FRNT,18);
 	  softPwmWrite(L_MTR_PIN_BKWD, 00);
 	  softPwmWrite(R_MTR_PIN_FRNT,18);
@@ -38,7 +38,7 @@ void move_frwd(void)
 
 void turn(void)
 {
-      ROS_INFO("TURNING>>");                  //uncomment for debugging
+      //ROS_INFO("TURNING>>");                  //uncomment for debugging
 	  softPwmWrite(L_MTR_PIN_FRNT, 00);
 	  softPwmWrite(L_MTR_PIN_BKWD, 17);
 	  softPwmWrite(R_MTR_PIN_FRNT, 17);
@@ -47,7 +47,7 @@ void turn(void)
 
 void stop(void)
 {
-      ROS_INFO(">>>STOPPED<<<");                  //uncomment for debugging
+      //ROS_INFO(">>>STOPPED<<<");                  //uncomment for debugging
 	  softPwmWrite(L_MTR_PIN_FRNT, 0);
 	  softPwmWrite(L_MTR_PIN_BKWD, 0);
 	 softPwmWrite(R_MTR_PIN_FRNT, 0);
@@ -112,7 +112,7 @@ int main(int argc, char **argv)
   pinMode(R_MTR_PIN_FRNT, OUTPUT);
   pinMode(R_MTR_PIN_BKWD, OUTPUT);
 
-  //Initialize pins for PWM
+  //Initialize pins for PWM        //Auto Start Initializing with 18
   softPwmCreate(L_MTR_PIN_FRNT,18,100);
   softPwmCreate(L_MTR_PIN_BKWD, 0, 100);
   softPwmCreate(R_MTR_PIN_FRNT,18,100);
@@ -120,7 +120,7 @@ int main(int argc, char **argv)
 
   ROS_INFO("__STARTED MOTOR CONTROL___");
   
-               //Auto Start
+               
 
   ros::Subscriber sub = n.subscribe("odometry", 1000, motor_control);
 

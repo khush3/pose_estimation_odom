@@ -3,7 +3,7 @@
  * ______________________________________________________
  *                  TELEOP_MOTOR_CONTROL_CODE
  * 
- *                            w(^)
+ *                            w(^)              
  *                  (<)a                s(>)
  *
  */
@@ -20,8 +20,8 @@
 #define L_MTR_PIN_FRNT 26
 #define L_MTR_PIN_BKWD 24
 
-#define move_speed 80
-#define turn_speed 80
+#define move_speed 40
+#define turn_speed 30
 
 /* reads from keypress, doesn't echo */
 int getch(void)
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
   //Initial Setups
   ros::init(argc, argv, "teleop_motor_control_node");
   ros::NodeHandle n;
-  ros::Publisher chatter_pub = n.advertise<mobile_robot::state>("state", 1000);
+  ros::Publisher chatter_pub = n.advertise<mobile_robot::state>("state", 50);
   wiringPiSetup();
 
   //Declare outputs
@@ -106,26 +106,24 @@ int main(int argc, char **argv)
     
 	if(s.key == 'w')
     {
-	  //ROS_INFO("ENTERED w");                //uncomment for debugging
       move_frwd();
       chatter_pub.publish(s);
-
     }
+    
     else if(s.key == 'a')
     {
-	  //ROS_INFO("ENTERED a");                //uncomment for debugging
       turn_l();
       chatter_pub.publish(s);
     }
+
     else if(s.key == 'd')
     {
-	  //ROS_INFO("ENTERED d");                //uncomment for debugging
       turn_r();
       chatter_pub.publish(s);
     }
+
     else if(s.key == 's')
     {
-	  //ROS_INFO("ENTERED STOP");                //uncomment for debugging
       stop();
       chatter_pub.publish(s);
     }

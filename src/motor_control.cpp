@@ -1,8 +1,8 @@
 
-/*                 iv.labs summer project
+/*                 IV.labs summer project
  *                    MOBILE ROBOT
  * ______________________________________________________
- *                  MOTOR_CONTROL_CODE
+ *                  MOTOR_CONTROL_CODE          
  *                  (for UMBmark test)
  *
  */
@@ -12,9 +12,9 @@
 #include <softPwm.h>
 
 
-#define WHEEL_DIAMETER_L 0.065444
-#define WHEEL_DIAMETER_R 0.067444
-#define BASE_LENGTH 1.55
+#define WHEEL_DIAMETER_L 0.073174
+#define WHEEL_DIAMETER_R 0.0667444
+#define BASE_LENGTH 0.156106
 #define PI 3.14159265358979
 
 
@@ -29,9 +29,9 @@
 void move_frwd(void)
 {
       //ROS_INFO("HEADING ST");                  //uncomment for debugging
-	  softPwmWrite(L_MTR_PIN_FRNT,18);
+	  softPwmWrite(L_MTR_PIN_FRNT,28);
 	  softPwmWrite(L_MTR_PIN_BKWD, 00);
-	  softPwmWrite(R_MTR_PIN_FRNT,18);
+	  softPwmWrite(R_MTR_PIN_FRNT,28);
 	  softPwmWrite(R_MTR_PIN_BKWD, 00);
 }	  
 
@@ -40,8 +40,8 @@ void turn(void)
 {
       //ROS_INFO("TURNING>>");                  //uncomment for debugging
 	  softPwmWrite(L_MTR_PIN_FRNT, 00);
-	  softPwmWrite(L_MTR_PIN_BKWD, 17);
-	  softPwmWrite(R_MTR_PIN_FRNT, 17);
+	  softPwmWrite(L_MTR_PIN_BKWD, 28);
+	  softPwmWrite(R_MTR_PIN_FRNT, 28);
 	  softPwmWrite(R_MTR_PIN_BKWD, 00);
 }
 
@@ -66,27 +66,27 @@ void motor_control(const mobile_robot::Counter msg)
   {
 	  move_frwd();
   }
-  else if(motor_dist >1.0  && motor_dist <= 1.11)
+  else if(motor_dist >1.0  && motor_dist <= 1.1105)
   {
 	  turn();
   }
-  else if(motor_dist >1.11 && motor_dist <= 2.11)
+  else if(motor_dist >1.1105 && motor_dist <= 2.1105)
   {
 	  move_frwd();
   }
-  else if(motor_dist > 2.11 && motor_dist <= 2.22)
+  else if(motor_dist > 2.1105 && motor_dist <= 2.221)
   {
 	  turn();
   }
-  else if(motor_dist > 2.22 && motor_dist <= 3.22)
+  else if(motor_dist > 2.221 && motor_dist <= 3.221)
   {
 	  move_frwd();
   }
-  else if(motor_dist > 3.22 && motor_dist <= 3.33)
+  else if(motor_dist > 3.221 && motor_dist <= 3.3305)
   {
 	  turn();
   }
-  else if(motor_dist > 3.33 && motor_dist <= 4.33)
+  else if(motor_dist > 3.3305 && motor_dist <= 4.33305)
   {
 	  move_frwd();
   }

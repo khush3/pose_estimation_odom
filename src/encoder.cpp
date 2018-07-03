@@ -3,7 +3,7 @@
  * ______________________________________________________
  *                    ENCODERS_CODE
  * 
- * 
+ *       
  * Reads odometry data from wheel encoders and publishes as Counter type message.
  * 
  */
@@ -25,7 +25,7 @@ int main(int argc, char** argv)
     //Initial setup
     ros::init(argc, argv, "encoder_node");
     ros::NodeHandle n;
-    ros::Publisher chatter_pub = n.advertise<mobile_robot::Counter>("odometry", 1000);
+    ros::Publisher chatter_pub = n.advertise<mobile_robot::Counter>("odometry", 100);
     //ros::Rate loop_rate(100);
 	wiringPiSetup();
 	
@@ -75,7 +75,6 @@ int main(int argc, char** argv)
 			msg.cntr_sensor_1 = cntr_1;
 			msg.cntr_sensor_2 = cntr_2;
 			chatter_pub.publish(msg);
-			ROS_INFO("Counter = %d", cntr_1);      //Uncomment for debugging
 			flag = 0;                   //Set flag low
 		}
 		

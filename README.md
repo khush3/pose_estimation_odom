@@ -5,4 +5,10 @@ position-estimation-node, encoder-node, teleop-motor-control-node.
 positon-estimation-node subscribes to encoder-node and teleop-motor-control-node and prints localization data.
 teleop-motor-control-node control node controls robot using realtime keyboard control.
 encoder-node reads sensor values and publishes message when counters increment.
+
+Team Members:
+Khush Agrawal
+Abhay Khandelwal
+Shreyash Sonawane
+Ameya Talatule
  

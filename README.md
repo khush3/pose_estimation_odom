@@ -10,10 +10,14 @@ encoder-node reads sensor values and publishes message when counters increment.
 
 # Team Members:
 1.Khush Agrawal
+
 2.Abhay Khandelwal
+
 3.Shreyash Sonawane
+
 4.Ameya Talatule
 
 # Team Mentors:
 1.Akshay Kulkarni
+
 2.Sagar Swami

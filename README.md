@@ -9,11 +9,11 @@ teleop-motor-control-node control node controls robot using realtime keyboard co
 encoder-node reads sensor values and publishes message when counters increment.
 
 # Team Members:
-Khush Agrawal
-Abhay Khandelwal
-Shreyash Sonawane
-Ameya Talatule
+1.Khush Agrawal
+2.Abhay Khandelwal
+3.Shreyash Sonawane
+4.Ameya Talatule
 
 # Team Mentors:
-Akshay Kulkarni
-Sagar Swami
+1.Akshay Kulkarni
+2.Sagar Swami

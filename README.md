@@ -1,7 +1,7 @@
-# Mobile-Robot
+# Pose Estimation of a differential drive robot using Odometry
 
 # Overview
-An autonomous robot which can estimate it's position(abscissa and ordinate), and orientation(angle) in a 2-D space.
+A teleop-controlled robot which can estimate it's position (abscissa and ordinate), and orientation(angle) in a 2-D space.
 Data received from encoders is processed on raspberry-pi using ROS. Complete processes is executed via three nodes
 position-estimation-node, encoder-node, teleop-motor-control-node.
 positon-estimation-node subscribes to encoder-node and teleop-motor-control-node and prints localization data.
